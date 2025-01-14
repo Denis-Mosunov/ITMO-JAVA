@@ -62,27 +62,4 @@ public class Main {
         }
         return a / b;
     }
-
-    // TEST
-    public static void main(String[] args) {
-        Main calculator = new Main();
-
-        // Тестируем методы с int
-        System.out.println("Сумма (int): " + calculator.sum(10, 5));
-        System.out.println("Вычитание (int): " + calculator.subtract(10, 5));
-        System.out.println("Умножение (int): " + calculator.multiply(10, 5));
-        System.out.println("Деление (int): " + calculator.divide(10, 5));
-
-        // Тестируем методы с long
-        System.out.println("Сумма (long): " + calculator.sum(10000000000L, 5000000000L));
-        System.out.println("Вычитание (long): " + calculator.subtract(10000000000L, 5000000000L));
-        System.out.println("Умножение (long): " + calculator.multiply(1000000000L, 5L));
-        System.out.println("Деление (long): " + calculator.divide(10000000000L, 2L));
-
-        // Тестируем методы с double
-        System.out.println("Сумма (double): " + calculator.sum(10.5, 5.2));
-        System.out.println("Вычитание (double): " + calculator.subtract(10.5, 5.2));
-        System.out.println("Умножение (double): " + calculator.multiply(10.5, 5.2));
-        System.out.println("Деление (double): " + calculator.divide(10.5, 5.2));
-    }
 }
