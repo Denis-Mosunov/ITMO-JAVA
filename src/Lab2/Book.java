@@ -64,18 +64,4 @@ public class Book {
         System.out.println("Год издания: " + year);
         System.out.println("Жанр: " + genre);
     }
-
-    // Пример использования
-    public static void main(String[] args) {
-        // Создаем объект с конструктором по умолчанию
-        Book book1 = new Book();
-        System.out.println("Информация о книге (book1):");
-        book1.displayInfo(); // Выводит информацию с дефолтными значениями
-        System.out.println();
-
-        // Создаем объект с параметрами
-        Book book2 = new Book("1984", "Джордж Оруэлл", 1949, "Антиутопия");
-        System.out.println("Информация о книге (book2):");
-        book2.displayInfo(); // Выводит информацию с заданными параметрами
-    }
 }
