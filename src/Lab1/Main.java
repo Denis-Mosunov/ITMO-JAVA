@@ -11,6 +11,23 @@ public class Main {
         Exercise5();
         Exercise6();
     }
+    private static void Exercise1() {
+    }
 
+    private static void Exercise2() {
+    }
+
+    private static void Exercise3() {
+    }
+
+    private static void Exercise4() {
+    }
+
+    private static void Exercise5() {
+    }
+
+    private static void Exercise6() {
+    }
+}
 
 
