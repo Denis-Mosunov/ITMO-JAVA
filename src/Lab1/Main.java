@@ -19,7 +19,7 @@ public class Main {
     }
 
     private static void Exercise2() {
-        int result1 = (46 + 10) * (10 / 3);
+        double result1 = (46 + 10) * (10 / 3);
         int result2 = 29 * 4 * (-15);
         System.out.println("Результат первого выражения: " + result1);
         System.out.println("Результат второго выражения: " + result2);
@@ -27,7 +27,7 @@ public class Main {
 
     private static void Exercise3() {
         int number = 10500;
-        int result3 = (number / 10) / 10;
+        double result3 = (number / 10) / 10;
         System.out.println("Результат выражения с переменной number: " + result3);
     }
 
