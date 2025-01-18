@@ -42,18 +42,17 @@ public class Main {
     }
 
     // Методы для деления
-    public int divide(int a, int b) {
+    public double divide(int a, int b) {
         if (b == 0) {
             throw new ArithmeticException("Деление на ноль недопустимо для int!");
         }
-        return a / b;
+        return (double) a / b;
     }
-
-    public long divide(long a, long b) {
+    public double divide(long a, long b) {
         if (b == 0) {
             throw new ArithmeticException("Деление на ноль недопустимо для long!");
         }
-        return a / b;
+        return (double) a / b;
     }
 
     public double divide(double a, double b) {
@@ -71,7 +70,7 @@ public class Main {
         System.out.println("Сумма (int): " + calculator.sum(10, 5));
         System.out.println("Вычитание (int): " + calculator.subtract(10, 5));
         System.out.println("Умножение (int): " + calculator.multiply(10, 5));
-        System.out.println("Деление (int): " + calculator.divide(10, 5));
+        System.out.println("Деление (int): " + calculator.divide(11, 5));
 
         // Тестируем методы с long
         System.out.println("Сумма (long): " + calculator.sum(10000000000L, 5000000000L));
