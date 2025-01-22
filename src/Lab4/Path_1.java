@@ -4,18 +4,51 @@ import java.util.Scanner;
 
 public class Path_1 {
     public static void main(String[] args) {
+
         Exercise1();
         Exercise2();
-        Exercise3();
-        Exercise4();
-        Exercise5();
-        Exercise6();
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Exercise 3
+        System.out.print("Введите первое число: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Введите второе число: ");
+        int num2 = scanner.nextInt();
+        System.out.print("Введите третье число: ");
+        int num3 = scanner.nextInt();
+        boolean result3 = Exercise3(num1, num2, num3);
+        System.out.println("Результат: " + result3);
+
+        // Exercise 4
+        System.out.print("Введите первое число: ");
+        int num4 = scanner.nextInt();
+        System.out.print("Введите второе число: ");
+        int num5 = scanner.nextInt();
+        System.out.print("Введите третье число: ");
+        int num6 = scanner.nextInt();
+        boolean result4 = Exercise4(num4, num5, num6);
+        System.out.println("Результат: " + result4);
+
+        // Exercise 5
+        int[] array5 = {3, -3, 7, 4, 5, 4, 3};
+        boolean result5 = Exercise5(array5);
+        System.out.println("Результат Exercise5: " + result5);
+
+        // Exercise 6
+        int[] array6 = {3, -3, 7, 4, 5, 4, 1};
+        boolean result6 = Exercise6(array6);
+        System.out.println("Результат Exercise6: " + result6);
+
+        scanner.close();
     }
+
     private static void Exercise1() {
         for (int i = 1; i <= 99; i += 2) {
             System.out.println(i);
         }
     }
+
     private static void Exercise2() {
         System.out.print("Делится на 3: ");
         for (int i = 1; i <= 100; i++) {
@@ -42,58 +75,29 @@ public class Path_1 {
         System.out.println();
     }
 
-    private static void Exercise3() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите первое число: ");
-        int num1 = scanner.nextInt();
-
-        System.out.print("Введите второе число: ");
-        int num2 = scanner.nextInt();
-
-        System.out.print("Введите третье число: ");
-        int num3 = scanner.nextInt();
-
-        boolean result = (num1 + num2 == num3);
-        System.out.println("Результат: " + result);
+    private static boolean Exercise3(int num1, int num2, int num3) {
+        return num1 + num2 == num3;
     }
 
-
-    private static void Exercise4() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите первое число: ");
-        int num1 = scanner.nextInt();
-
-        System.out.print("Введите второе число: ");
-        int num2 = scanner.nextInt();
-
-        System.out.print("Введите третье число: ");
-        int num3 = scanner.nextInt();
-
-        boolean result = (num2 > num1 && num3 > num2);
-        System.out.println("Результат: " + result);
+    private static boolean Exercise4(int num1, int num2, int num3) {
+        return num2 > num1 && num3 > num2;
     }
 
-    private static void Exercise5() {
-        int[] array = {3, -3, 7, 4, 5, 4, 3};
-
+    private static boolean Exercise5(int[] array) {
         if (array.length >= 2) {
-            boolean result = (array[0] == 3 || array[array.length - 1] == 3);
-            System.out.println("Результат: " + result);
+            return array[0] == 3 || array[array.length - 1] == 3;
         } else {
             System.out.println("Массив должен содержать минимум два элемента.");
+            return false;
         }
     }
-    private static void Exercise6() {
-        int[] array = {3, -3, 7, 4, 5, 4, 1};
+
+    private static boolean Exercise6(int[] array) {
         for (int num : array) {
             if (num == 1 || num == 3) {
-                System.out.println("Массив содержит число 1 или 3");
-                break;}
-                else {System.out.println("Массив не содержит число 1 или 3");
-                    break;}
+                return true;
             }
         }
+        return false;
     }
+}
