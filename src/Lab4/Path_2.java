@@ -9,14 +9,15 @@ public class Path_2 {
         Exercise3();
         Exercise4();
         Exercise5();
-        Exercise6();
     }
-    private static int[] GetArray(int size) {
+
+    private static int[] GetArray() {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Array length: ");
+        int size = scanner.nextInt();
         int[] array = new int[size];
-        System.out.println("Пожалуйста, заполните массив из " + size + " элементов:");
+        System.out.println("Numbers of array:");
         for (int i = 0; i < size; i++) {
-            System.out.print("Число " + (i + 1) + ": ");
             array[i] = scanner.nextInt();
         }
         return array;
@@ -24,10 +25,7 @@ public class Path_2 {
 
     // Проверка, отсортирован ли массив
     private static void Exercise1() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Упражнение 1. Введите размер массива: ");
-        int size = scanner.nextInt();
-        int[] array = GetArray(size);
+        int[] array = GetArray();
         boolean isSorted = true;
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
@@ -36,20 +34,16 @@ public class Path_2 {
             }
         }
         if (isSorted) {
-            System.out.println("Ваш массив отсортирован.");
+            System.out.println("OK");
         } else {
-            System.out.println("Ваш массив НЕ отсортирован.");
+            System.out.println("Please, try again");
         }
     }
 
-    // Считывание массива с клавиатуры
+    // Считывание массива с клавиатуры и вывод
     private static void Exercise2() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Упражнение 2. Введите размер массива: ");
-        int size = scanner.nextInt();
-        int[] array = GetArray(size);
-
-        System.out.print("Массив: [");
+        int[] array = GetArray();
+        System.out.print("Result: [");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
             if (i < array.length - 1) System.out.print(", ");
@@ -59,33 +53,29 @@ public class Path_2 {
 
     // Замена первого и последнего элемента массива
     private static void Exercise3() {
-        int[] arrayA = {1, 21, 43, 12, 84, 62};
-        System.out.print("Упражнение 3. Имеется массив A: [");
-        for (int i = 0; i < arrayA.length; i++) {
-            System.out.print(arrayA[i]);
-            if (i < arrayA.length - 1) System.out.print(", ");
+        int[] array = GetArray();
+        System.out.print("Array 1: [");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if (i < array.length - 1) System.out.print(", ");
         }
         System.out.println("]");
 
-        int temp = arrayA[0];
-        arrayA[0] = arrayA[arrayA.length - 1];
-        arrayA[arrayA.length - 1] = temp;
+        int temp = array[0];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = temp;
 
-        System.out.print("Массив после замены: [");
-        for (int i = 0; i < arrayA.length; i++) {
-            System.out.print(arrayA[i]);
-            if (i < arrayA.length - 1) System.out.print(", ");
+        System.out.print("Array 2: [");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if (i < array.length - 1) System.out.print(", ");
         }
         System.out.println("]");
     }
 
     // Поиск первого уникального элемента
     private static void Exercise4() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Упражнение 4. Введите размер массива: ");
-        int size = scanner.nextInt();
-        int[] array = GetArray(size);
-
+        int[] array = GetArray();
         for (int i = 0; i < array.length; i++) {
             boolean isUnique = true;
             for (int j = 0; j < array.length; j++) {
@@ -102,10 +92,10 @@ public class Path_2 {
         System.out.println("Уникальных чисел не найдено.");
     }
 
-    // Генерация и сортировка массива методом слияния
+    // Генерация массива и сортировка методом слияния
     private static void Exercise5() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Упражнение 5. Введите размер массива: ");
+        System.out.print("Введите размер массива: ");
         int size = scanner.nextInt();
         int[] array = new int[size];
         System.out.println("Генерация массива...");
@@ -164,11 +154,5 @@ public class Path_2 {
         while (j < right.length) result[k++] = right[j++];
 
         return result;
-    }
-
-    // Функция для запуска Упражнения 6
-    private static void Exercise6() {
-        System.out.println("Упражнение 6 совпадает с Упражнением 5 (сортировка массива).");
-        Exercise5();
     }
 }
